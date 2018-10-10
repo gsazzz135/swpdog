@@ -8,6 +8,7 @@ import javax.inject.Inject;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -32,7 +33,7 @@ public class BoardDAOTest {
 	private static int maxbno = 0;	//최�?
 	private static boolean flag = false;
 
-	@Before
+	@Ignore @Before
 	public void getMaxBno() throws Exception {
 		if (!flag) {
 			maxbno = dao.getMaxBno();
@@ -41,7 +42,7 @@ public class BoardDAOTest {
 		}
 	}
 	
-	@Test
+	@Ignore @Test
 	public void testURI() throws Exception{
 		int bno = 207;
 		int perPageNum = 20;
@@ -59,7 +60,7 @@ public class BoardDAOTest {
 				
 	}
 	
-	@Test
+	@Ignore @Test
 	public void testURI2() throws Exception{
 		int bno = 207;
 		int perPageNum = 20;
@@ -78,7 +79,7 @@ public class BoardDAOTest {
 				
 	}
 	
-	@Test
+	@Ignore @Test
 	public void testCreate() throws Exception {
 		Board board = new Board();
 		board.setTitle("add new article");
@@ -87,12 +88,12 @@ public class BoardDAOTest {
 		dao.create(board);
 	}
 
-	@Test
+	@Ignore @Test
 	public void testRead() throws Exception {
 		logger.info(dao.read(1).toString());
 	}
 
-	@Test
+	@Ignore @Test
 	public void testUpdate() throws Exception {
 		Board board = new Board();
 		board.setBno(maxbno);
@@ -101,19 +102,19 @@ public class BoardDAOTest {
 		dao.update(board);
 	}
 
-	@After
+	@Ignore @After
 	public void testDelete() throws Exception {
 		dao.delete(maxbno);
 	}
 	
-	@Test
+	@Ignore @Test
 	public void testListPage() throws Exception {
 		
 		List<Board> list = dao.listPage(3);
 		assertEquals(10, list.size());
 	}
 	
-	@Test
+	@Ignore @Test
 	public void testListCriteria() throws Exception {
 		
 		Criteria criteria = new Criteria();

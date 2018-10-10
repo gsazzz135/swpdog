@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import javax.inject.Inject;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -22,7 +23,7 @@ public class BoardServiceTest {
 	private BoardService service;
 
 	private static Logger logger = LoggerFactory.getLogger(BoardServiceTest.class);
-	@Test
+	@Ignore @Test
 	public void testRead() throws Exception {
 		Board board = service.read(150);
 		logger.debug(board.toString());
