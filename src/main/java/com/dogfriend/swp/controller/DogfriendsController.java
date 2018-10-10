@@ -25,7 +25,7 @@ public class DogfriendsController {
 //		}catch{
 //			
 //		}
-		return temp;				//EEE 반환타입
+		return null;				//EEE 반환타입
 	}
 	
 	@RequestMapping("/temp")
