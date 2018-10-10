@@ -2,6 +2,7 @@ package com.dogfriend.service.test;
 
 import javax.inject.Inject;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -21,7 +22,7 @@ public class MessageServiceTest {
 
 	private static Logger logger = LoggerFactory.getLogger(MessageServiceTest.class);
 
-	@Test
+	@Ignore @Test
 	public void testWriteMessage() throws Exception {
 		MessageVO msg = new MessageVO();
 		msg.setSender("user1");
