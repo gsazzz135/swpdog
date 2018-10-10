@@ -2,30 +2,26 @@ package com.dogfriend.swp.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dogfriend.swp.domain.tempHumiVO;
+
 @RestController
-@RequestMapping("/appcontroller")
+@RequestMapping("/appctrl")
 public class DogfriendsController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(DogfriendsController.class);
 
-	@RequestMapping(value = "/{temp}/{humi}", method = RequestMethod.GET)
-	public ResponseEntity<String> checkTemp(@PathVariable("temp") Integer temp, 
-											@PathVariable("humi") Integer humi) throws Exception {
-		logger.debug("..... temp={}, humi={}", temp, humi);
-		
-//		try {
-//			DogfriendsVO vo = service.readTemp(temp);
-//			return new ResponseEntity<Integer>(temp, HttpStatus.OK);
-//		}catch{
-//			
-//		}
-		return null;				//EEE 반환타입
+	@GetMapping("/view/{temp}/{humi}")	//온습도 requestMapping + mothod get
+	public tempHumiVO tempHumi(@PathVariable("temp") String temp,
+							   @PathVariable("humi") String humi ) {
+		tempHumiVO temHum = new tempHumiVO();
+		temHum.setTemp(temp);
+		temHum.setHumi(humi);
+		return temHum;
 	}
 	
 	@RequestMapping("/temp")
