@@ -30,7 +30,7 @@ public class FileUtilsTest {
 		assertTrue(existsDir(path));
 	}
 	
-	@Test
+	@Ignore @Test
 	public void testThumbnail() throws IOException{
 		String dirname = "C:\\Users\\gsa23\\Documents\\workspace-sts-3.9.5.RELEASE\\upload\\2018\\09\\21";
 		String filename = "1app_main.png";
