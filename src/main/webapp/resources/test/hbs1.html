@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Handlebar Test1</title>
+</head>
+<body>
+
+<!-- 데이터가 보여질 공간 -->
+<div id="tmpl1-output"></div>
+
+<!-- 핸들바 -->
+<script id="tmpl1" type="text/x-handlebars-template">
+	<div>
+		id: {{id}}, name: {{name}}
+	</div>
+</script>
+<hr/>
+User2:
+<script id="tmpl2" type="text/x-handlebars-template">
+	<div>
+		{{id}}, <strong>{{name}}</strong>
+	</div>
+</script>
+
+<script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="../handlebars-v4.0.12.js"></script>
+<script src="./hbsV1.js"></script>
+
+<script>
+let context = {id: 123, name: "홍길동"};
+
+renderHbs("tmpl1", context);
+renderHbs("tmpl2", context, 'span')
+</script>
+</body>
+</html>
